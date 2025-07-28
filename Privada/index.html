@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Villas del Cielo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Fuente cursiva (Google Fonts) -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        h3, label {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;  
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('img/fondo1.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Great Vibes', cursive;
+        } 
+        
+
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .navbar-brand {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .bienvenida {
+            text-align: center;
+            margin-top: 20%;
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+        }
+
+        .bienvenida h1 {
+            font-size: 52px;
+        }
+
+        .bienvenida p {
+            font-size: 24px;
+        }
+
+        .btn-iniciar {
+            background-color: #75b3e7;
+            border: none;
+        }
+
+        .btn-iniciar:hover {
+            background-color: #5097d2;
+        }
+
+        .modal-content {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .form-label {
+            font-weight: bold;
+        }
+
+        .forgot-link {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg px-4">
+        <a class="navbar-brand" href="#">Villas del Cielo</a>
+        <div class="ms-auto">
+            <button class="btn btn-iniciar text-white" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="bi bi-box-arrow-in-right"></i> Iniciar sesión
+            </button>
+        </div>
+    </nav>
+
+    <!-- Bienvenida -->
+    <div class="bienvenida">
+        <h1>Bienvenido a Villas del Cielo</h1>
+        <p>Un espacio de tranquilidad, comunidad y seguridad — tu hogar ideal te espera.</p>
+    </div>
+
+    <!-- Modal de inicio de sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <form action="php/login.php" method="POST">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="usuario" name="usuario" placeholder = "Usuario" required>
+                        </div>
+                        <div class="input-group mb-3">
+                          <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="Contraseña" required minlength="6">
+                          <button type="button" class="btn btn-outline-secondary" onclick="togglePassword()">
+    						<i class="bi bi-eye" id="icono-ojo"></i>
+                        </div>
+
+
+                        <div class="text-end">
+                            <a href="#" class="forgot-link text-decoration-none">¿Olvidaste tu contraseña?</a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/validaciones.js"></script>
+</body>
+</html>
